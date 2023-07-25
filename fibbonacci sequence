@@ -1,0 +1,29 @@
+#include <iostream>
+
+int member (int sequence[] , int i);
+
+int main(){
+    
+    
+ 
+    int size ;
+    std::cout << "How many terms do you want?" << '\n';
+    std::cin >> size;
+
+    int sequence[size];
+    sequence[0] = 0;
+    sequence[1] = 1;
+
+    std::cout << "0" << " ";
+    for(int j = 0; j < size - 1; j++ ){
+        std::cout << member(sequence, j) << " ";
+    }
+    
+
+    return 0;
+}
+int member (int sequence[], int i){
+    
+    sequence[i+2] = sequence[i+1] + sequence[i];
+    return sequence[i+2];
+}
